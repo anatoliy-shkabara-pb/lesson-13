@@ -38,7 +38,12 @@ public class Deadlock {
         Friend alice = new Friend("Alice");
         Friend bob = new Friend("Bob");
 
-        new Thread(() -> alice.bow(bob)).start();
-        new Thread(() -> bob.bow(alice)).start();
+        Thread aliceThread = new Thread(() -> alice.bow(bob));
+        aliceThread.setName("Alice");
+        aliceThread.start();
+
+        Thread bobThread = new Thread(() -> bob.bow(alice));
+        bobThread.setName("Bob");
+        bobThread.start();
     }
 }
