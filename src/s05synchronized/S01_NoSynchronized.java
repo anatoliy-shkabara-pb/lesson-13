@@ -17,7 +17,7 @@ public class S01_NoSynchronized {
     }
 
     static class CountThread implements Runnable {
-        CommonResource res;
+        private final CommonResource res;
 
         CountThread(CommonResource res) {
             this.res = res;

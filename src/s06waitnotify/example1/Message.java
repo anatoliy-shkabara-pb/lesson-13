@@ -1,4 +1,4 @@
-package s06waitnotify;
+package s06waitnotify.example1;
 
 public class Message {
     // поле, с которым будут работать потоки через вызовы геттеров и сеттеров

@@ -1,8 +1,8 @@
-package s06waitnotify;
+package s06waitnotify.example1;
 
 public class Waiter implements Runnable {
 
-    private Message msg;
+    private final Message msg;
 
     public Waiter(Message m) {
         this.msg = m;

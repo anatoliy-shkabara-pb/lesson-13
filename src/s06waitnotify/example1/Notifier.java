@@ -1,8 +1,8 @@
-package s06waitnotify;
+package s06waitnotify.example1;
 
 public class Notifier implements Runnable {
 
-    private Message msg;
+    private final Message msg;
 
     public Notifier(Message msg) {
         this.msg = msg;
@@ -15,9 +15,9 @@ public class Notifier implements Runnable {
         try {
             Thread.sleep(1000);
             synchronized (msg) {
-                msg.setMsg(name + " поток Notifier отработал");
+                //msg.setMsg(name + " поток Notifier отработал");
                 msg.notify();
-                //msg.notifyAll();
+                msg.notifyAll();
             }
         } catch (InterruptedException e) {
             e.printStackTrace();
